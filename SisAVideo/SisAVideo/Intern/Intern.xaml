@@ -1,0 +1,65 @@
+﻿<Controls:MetroWindow x:Class="SisAVideo.Intern.Intern"
+        
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        
+        Title="SisAVideo - Sistema Administrativo de Videoconferências - Área do Estagiário"
+        Height="600" Width="800"
+        WindowStyle="ThreeDBorderWindow"  ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="True" Topmost="False">
+
+<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+  
+    <Grid>
+        <Controls:Tile x:Name="videoconferenciaTile" Title="Videoconferência" Height="120" Width="250" Margin="50,80,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="videoconferenciaTile_Click">
+            <Image Height="100" Width="100" Source="/SisAVideo;component/res/appbar.movie.clapper.solid.png" Stretch="None"/>
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="avaliacaoTile" Title="Avaliacao"  Height="120" Width="250" Margin="50,208,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="avaliacaoTile_Click">
+            <Image Height="100" Width="100" Source="/SisAVideo;component/res/appbar.page.excel.png" Stretch="None"/>
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="estagiarioTile" Title="Estagiário"  Height="120" Width="250"  Margin="308,80,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="estagiarioTile_Click">
+            <Image Height="100" Width="100" Source="/SisAVideo;component/res/appbar.user.png" Stretch="None"/>
+        </Controls:Tile>
+        
+        <Controls:Tile x:Name="apontamentoTile" Title="Apontamento" Height="120" Width="250" Margin="308,208,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="apontamentoTile_Click">
+            <Image Height="100" Width="100" Source="/SisAVideo;component/res/appbar.fingerprint.png" Stretch="None"/>
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="streamingTile" Title="Streaming"  Height="120" Width="120" Margin="50,336,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="streamingTile_Click">
+            <Image Height="100" Width="100" Source="/SisAVideo;component/res/appbar_video.png" Stretch="None"/>
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="contagemTile" Title="Contagem"  Height="120" Width="120" Margin="180,336,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="contagemTile_Click">
+            <Image Height="100" Width="100" Source="/SisAVideo;component/res/appbar_checkmark_pencil.png" Stretch="None"/>
+        </Controls:Tile>
+
+        
+        
+        <Controls:Tile x:Name="sobreTile" Title="Sobre"  Height="120" Width="120" Margin="308,336,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="sobreTile_Click">
+            <Image Height="100" Width="100" Source="/SisAVideo;component/res/appbar_clipboard_file.png" Stretch="None"/>
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="siteTile" Title="Site tecReg" Height="120" Width="120" Margin="438,336,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="siteTile_Click">
+            <Image Height="100" Width="100" Source="/SisAVideo;component/res/appbar.ie.png" Stretch="None"/>
+        </Controls:Tile>
+
+        <Label x:Name="lblNome" VerticalContentAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Height="36" Margin="50,40,0,0" VerticalAlignment="Top" Width="431" FontSize="21"/>
+
+    </Grid>
+
+</Controls:MetroWindow>

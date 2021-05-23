@@ -1,0 +1,121 @@
+﻿<Controls:MetroWindow x:Class="SisAVideo.Intern.Employer"
+        
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"    
+
+        Title="Estagiário"  WindowStyle="SingleBorderWindow"  ResizeMode="NoResize" 
+        Height="478" Width="600" WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False" Topmost="True"
+        ShowIconOnTitleBar="True" Icon="/SisAVideo;component/res/appbar.group.png">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+                <ResourceDictionary Source="/SisAVideo;component/Styles/MaskedTextBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <TabControl x:Name="tabControl"
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Height="450" Width="594"
+                Margin="0,0,0,0">
+
+            <TabItem Header="Estagiário" x:Name="tabEstagiario" Loaded="tabEstagiario_Loaded">
+                <Grid Margin="0,0,0,0">
+                    <Label x:Name="lblNomeAtualizar" Content="Nome: " HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="nomeBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="93,22,0,0" VerticalAlignment="Top" Width="430" IsEnabled="False"/>
+
+                    <Label x:Name="lblCpfAtualizar" Content="CPF: " HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="cpfBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="93,52,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="185" MaxLength="14" Panel.ZIndex="1" IsEnabled="False"/>
+
+                    <Label x:Name="lblRgAtualizar" Content="RG: " HorizontalAlignment="Left" Margin="299,50,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="rgBoxAtualizar" Mask="00\.000\.000-0" HorizontalAlignment="Left" Height="23" Margin="338,52,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="185" MaxLength="12" Panel.ZIndex="1" MouseDoubleClick="rgBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverRg" HorizontalAlignment="Left" Height="23" Margin="338,52,0,0" VerticalAlignment="Top" Width="185" Panel.ZIndex="0" MouseDoubleClick="lblOverRg_MouseDoubleClick"/>
+
+                    <Label x:Name="lblEmailAtualizar" Content="Email: " HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="emailBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="93,82,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="185" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="emailBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverEmail" HorizontalAlignment="Left" Height="23"  Margin="93,82,0,0" VerticalAlignment="Top" Width="185" Panel.ZIndex="0" MouseDoubleClick="lblOverEmail_MouseDoubleClick"/>
+
+                    <Label x:Name="lblSexoAtualizar" Content="Sexo: " HorizontalAlignment="Left" Margin="289,80,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="sexoBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="338,82,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="30" MaxLength="1" Panel.ZIndex="1" MouseDoubleClick="sexoBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverSexo" HorizontalAlignment="Left" Height="23"  Margin="338,82,0,0" VerticalAlignment="Top" Width="30" Panel.ZIndex="0" MouseDoubleClick="lblOverSexo_MouseDoubleClick"/>
+
+                    <Label x:Name="lblTelefoneAtualizar" Content="Tel: " HorizontalAlignment="Left" Margin="382,80,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="telefoneBoxAtualizar" Mask="(00) 0 0000-0000" Margin="418,82,0,0" Height="23" Width="105" MaxLength="16" VerticalAlignment="Top" HorizontalAlignment="Left" Panel.ZIndex="1" MouseDoubleClick="telefoneBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverTelefone" HorizontalAlignment="Left" Height="23"  Margin="418,82,0,0" VerticalAlignment="Top" Width="105" Panel.ZIndex="0" MouseDoubleClick="lblOverTelefone_MouseDoubleClick"/>
+
+                    <Label x:Name="lblDataNascAtualizar" Content="Nascimento: " HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="datanascPickerAtualizar" HorizontalAlignment="Left" Margin="93,112,0,0" VerticalAlignment="Top" Width="175" Panel.ZIndex="1" MouseDoubleClick="datanascPickerAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverDataNasc" HorizontalAlignment="Left" Height="23"  Margin="93,112,0,0" VerticalAlignment="Top" Width="175" Panel.ZIndex="0" MouseDoubleClick="lblOverDataNasc_MouseDoubleClick"/>
+
+                    <Separator HorizontalAlignment="Left" Height="18" Margin="0,140,0,0" VerticalAlignment="Top" Width="594" Background="#33000000"/>
+
+                    <Label x:Name="lblLogradouroAtualizar" Content="Logradouro: " HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="logradouroBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="106,162,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="308" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="logradouroBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverLogradouro" HorizontalAlignment="Left" Height="23"  Margin="106,162,0,0" VerticalAlignment="Top" Width="308" Panel.ZIndex="0" MouseDoubleClick="lblOverLogradouro_MouseDoubleClick"/>
+
+                    <Label x:Name="lblNumeroAtualizar" Content="Número: " HorizontalAlignment="Left" Margin="419,160,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="numeroBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="483,162,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="40" MaxLength="10" Panel.ZIndex="1" MouseDoubleClick="numeroBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverNumero" HorizontalAlignment="Left" Height="23"  Margin="483,162,0,0" VerticalAlignment="Top" Width="40" Panel.ZIndex="0" MouseDoubleClick="lblOverNumero_MouseDoubleClick"/>
+
+                    <Label x:Name="lblComplementoAtualizar"  Content="Complemento: " HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="complementoBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="106,192,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="100" MaxLength="20" Panel.ZIndex="1" MouseDoubleClick="complementoBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverComplemento" HorizontalAlignment="Left" Height="23" Margin="106,192,0,0" VerticalAlignment="Top" Width="100" Panel.ZIndex="0" MouseDoubleClick="lblOverComplemento_MouseDoubleClick"/>
+
+                    <Label x:Name="lblCepAtualizar" Content="CEP: " HorizontalAlignment="Left" Margin="211,190,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="cepBoxAtualizar" Mask="00000-000"  HorizontalAlignment="Left" Height="23" Margin="252,192,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="116" MaxLength="9" Panel.ZIndex="1" MouseDoubleClick="cepBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverCep" HorizontalAlignment="Left" Height="23" Margin="252,192,0,0" VerticalAlignment="Top" Width="116" Panel.ZIndex="0" MouseDoubleClick="lblOverCep_MouseDoubleClick"/>
+
+                    <Label x:Name="lblCidadeAtualizar" Content="Cidade: " HorizontalAlignment="Left" Margin="373,190,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="cidadeBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="431,192,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="92" MaxLength="30" Panel.ZIndex="1" MouseDoubleClick="cidadeBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverCidade" HorizontalAlignment="Left" Height="23" Margin="431,192,0,0" VerticalAlignment="Top" Width="92" Panel.ZIndex="0" MouseDoubleClick="lblOverCidade_MouseDoubleClick"/>
+
+                    <Separator HorizontalAlignment="Left" Height="18" Margin="0,220,0,0" VerticalAlignment="Top" Width="594" Background="#33000000"/>
+
+                    <Label x:Name="lblInstituicaoAtualizar"  Content="Instituição: " HorizontalAlignment="Left" Margin="10,240,0,0"  VerticalAlignment="Top"/>
+                    <TextBox x:Name="instituicaoBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="93,242,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="430" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="instituicaoBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverInstituicao" HorizontalAlignment="Left" Height="23" Margin="93,242,0,0" VerticalAlignment="Top" Width="430" Panel.ZIndex="0" MouseDoubleClick="lblOverInstituicao_MouseDoubleClick"/>
+                    
+                    <Label x:Name="lblCursoAtualizar" Content="Curso: " HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="cursoBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="93,272,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="287" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="cursoBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverCurso" HorizontalAlignment="Left" Height="23" Margin="93,272,0,0" VerticalAlignment="Top" Width="287"  Panel.ZIndex="0" MouseDoubleClick="lblOverCurso_MouseDoubleClick"/>
+                    
+                    <Label x:Name="lblDataIniAtualizar" Content="Início: " HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="datainiPickerAtualizar" HorizontalAlignment="Left" Margin="93,302,0,0" VerticalAlignment="Top" Width="175" Panel.ZIndex="1" MouseDoubleClick="datainiPickerAtualizar_MouseDoubleClick" />
+                    <Label x:Name="lblOverDataInicio" HorizontalAlignment="Left" Height="23" Margin="93,302,0,0" VerticalAlignment="Top" Width="175"  Panel.ZIndex="0" MouseDoubleClick="lblOverDataInicio_MouseDoubleClick"/>
+
+                    <Label x:Name="lblDataFimAtualizar" Content="Término: " HorizontalAlignment="Left" Margin="283,300,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="datafimPickerAtualizar" HorizontalAlignment="Left" Margin="348,302,0,0" VerticalAlignment="Top" Width="175" Panel.ZIndex="1" MouseDoubleClick="datafimPickerAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverDataFim" HorizontalAlignment="Left" Height="23" Margin="348,302,0,0"  VerticalAlignment="Top" Width="175"  Panel.ZIndex="0" MouseDoubleClick="lblOverDataFim_MouseDoubleClick"/>
+                    
+                    <Button x:Name="atualizarSendButton"
+                            Content="Atualizar" Width="150"
+                            Margin="144,350,0,0" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="atualizarSendButton_Click"/>
+
+                    <Button x:Name="atualizarcancelButton"
+                            Content="Cancelar" Width="150" 
+                            Margin="299,350,0,0" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cancelButton_Click"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Controls:MetroWindow>

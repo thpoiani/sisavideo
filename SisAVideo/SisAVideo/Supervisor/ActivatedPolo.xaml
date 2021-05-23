@@ -1,0 +1,68 @@
+﻿<Controls:MetroWindow x:Class="SisAVideo.Supervisor.ActivatedPolo"
+
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"        
+
+        Title="Polos Ativos" WindowStyle="SingleBorderWindow"  ResizeMode="NoResize" 
+        Height="430" Width="491" WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False" Topmost="True" Loaded="Polo_Loaded"
+        ShowIconOnTitleBar="True" Icon="/SisAVideo;component/res/appbar.city.png" >
+
+<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    
+    <Grid>
+
+        <Label Content="Polos Cadastrados" Margin="10,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" FontStretch="SemiExpanded"/>
+        <Label Content="Polos Ativos" Margin="285,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" FontStretch="SemiExpanded"/>
+
+        <ListBox x:Name="cadastradosBox" 
+                 HorizontalAlignment="Left" VerticalAlignment="Top"
+                 Height="300" Width="190"
+                 Margin="10,40,0,0"
+                 BorderBrush="#66119EDA"/>
+
+        <ListBox x:Name="ativosBox" 
+                 HorizontalAlignment="Left" VerticalAlignment="Top"
+                 Height="300" Width="190"
+                 Margin="285,40,0,0"
+                 BorderBrush="#66119EDA"/>
+
+        <Button x:Name="ativarButton" 
+                Content="&gt;&gt;" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Width="75"
+                Margin="205,140,0,0" Click="ativarButton_Click"/>
+
+        <Button x:Name="removerButton" 
+                Content="&lt;&lt;" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Width="75"
+                Margin="205,190,0,0" Click="removerButton_Click"/>
+        
+        <Button x:Name="okButton"
+                Content="OK" Width="150"
+                Margin="90,350,0,0" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" Click="okButton_Click"/>
+
+        <Button x:Name="cancelButton"
+                Content="Cancelar" Width="150" 
+                Margin="245,350,0,0" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Click="cancelButton_Click"/>
+
+    </Grid>
+</Controls:MetroWindow>

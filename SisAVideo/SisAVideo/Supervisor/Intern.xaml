@@ -1,0 +1,209 @@
+﻿<Controls:MetroWindow x:Class="SisAVideo.Supervisor.Intern"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"     
+        
+        Title="Estagiário"  WindowStyle="SingleBorderWindow"  ResizeMode="NoResize" 
+        Height="428" Width="600" WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False" Topmost="True" ShowIconOnTitleBar="True" 
+        Icon="/SisAVideo;component/res/appbar.user.png">
+    
+<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+                <ResourceDictionary Source="/SisAVideo;component/Styles/MaskedTextBox.xaml"/>
+                <ResourceDictionary Source="/SisAVideo;component/Styles/ComboBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+
+    <Grid>
+        <TabControl x:Name="tabControl"
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Height="400" Width="594"
+                Margin="0,0,0,0">
+
+            <TabItem Header="Cadastrar" x:Name="tabCadastrar" Loaded="tabCadastrar_Loaded">
+                <Grid>
+                    <Label x:Name="lblNome" Content="Nome: " HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="nomeBox" HorizontalAlignment="Left" Margin="93,22,0,0" VerticalAlignment="Top" Width="430" SelectionChanged="nomeBox_SelectionChange"/>
+
+                    <Label x:Name="lblPolo" Content="Polo: " HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="poloBox" HorizontalAlignment="Left" Margin="93,52,0,0" VerticalAlignment="Top" Width="250"/>
+                    
+                    <Separator HorizontalAlignment="Left" Height="18" Margin="0,80,0,0" VerticalAlignment="Top" Width="594" Background="#33000000"/>
+
+                    <Label x:Name="lblInstituicao"  Content="Instituição: " HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="instituicaoBox" HorizontalAlignment="Left" Height="23" Margin="93,102,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="430" MaxLength="80"/>
+
+                    <Label x:Name="lblCurso" Content="Curso: " HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="cursoBox" HorizontalAlignment="Left" Height="23" Margin="93,132,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="287" MaxLength="80"/>
+
+                    <Label x:Name="lblDataIni" Content="Início: " HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="datainiPicker" HorizontalAlignment="Left" Margin="93,162,0,0" VerticalAlignment="Top" Width="175"/>
+                    
+                    <Label x:Name="lblDataFim" Content="Término: " HorizontalAlignment="Left" Margin="283,160,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="datafimPicker" HorizontalAlignment="Left" Margin="348,162,0,0" VerticalAlignment="Top" Width="175"/>
+
+                    <Separator HorizontalAlignment="Left" Height="18" Margin="0,190,0,0" VerticalAlignment="Top" Width="594" Background="#33000000"/>
+
+                    <Label x:Name="lblDataContrato" Content="Data de Término de Contrato: " HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="datacontratoPicker" HorizontalAlignment="Left" Margin="186,212,0,0" VerticalAlignment="Top" Width="175"/>
+
+                    <Label x:Name="lblEntrada" Content="Horário de Entrada no Polo: " HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="entradaBox" Mask="00:00" HorizontalAlignment="Left" Height="23" Margin="175,242,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="45" MaxLength="5"/>
+
+                    <Label x:Name="lblSaida" Content="Horário de Saída do Polo: " HorizontalAlignment="Left" Margin="324,240,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="saidaBox" Mask="00:00" HorizontalAlignment="Left" Height="23" Margin="478,242,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="45" MaxLength="5"/>
+
+                    <Button x:Name="cadastrarSendButton"
+                            Content="Enviar" Width="150"
+                            Margin="144,300,0,0" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cadastrarSendButton_Click"/>
+
+                    <Button x:Name="cancelButton"
+                            Content="Cancelar" Width="150" 
+                            Margin="299,300,0,0" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cancelButton_Click"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Atualizar" x:Name="tabAtualizar" Loaded="tabAtualizar_Loaded">
+                <Grid>
+                    <Label x:Name="lblNomeAtualizar" Content="Nome: " HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="nomeBoxAtualizar" HorizontalAlignment="Left" Margin="93,22,0,0" VerticalAlignment="Top" Width="430" SelectionChanged="nomeBoxAtualizar_SelectionChange"/>
+                    
+                    <Label x:Name="lblPoloAtualizar" Content="Polo: " HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="poloBoxAtualizar" HorizontalAlignment="Left" Margin="93,52,0,0" VerticalAlignment="Top" Width="250" Panel.ZIndex="1" MouseDoubleClick="poloBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverPolo" HorizontalAlignment="Left" Margin="93,52,0,0" VerticalAlignment="Top" Width="250" Height="22" Panel.ZIndex="0" MouseDoubleClick="lblOverPolo_MouseDoubleClick"/>
+                    
+                    <Separator HorizontalAlignment="Left" Height="18" Margin="0,80,0,0" VerticalAlignment="Top" Width="594" Background="#33000000"/>
+
+                    <Label x:Name="lblInstituicaoAtualizar"  Content="Instituição: " HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="instituicaoBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="93,102,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="430" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="instituicaoBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverInstituicao" HorizontalAlignment="Left" Height="23" Margin="93,102,0,0" VerticalAlignment="Top" Width="430" Panel.ZIndex="0" MouseDoubleClick="lblOverInstituicao_MouseDoubleClick"/>
+                    
+                    <Label x:Name="lblCursoAtualizar" Content="Curso: " HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="cursoBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="93,132,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="287" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="cursoBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverCurso" HorizontalAlignment="Left" Height="23" Margin="93,132,0,0" VerticalAlignment="Top" Width="287"  Panel.ZIndex="0" MouseDoubleClick="lblOverCurso_MouseDoubleClick"/>
+                  
+                    <Label x:Name="lblDataIniAtualizar" Content="Início: " HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="datainiPickerAtualizar" HorizontalAlignment="Left" Margin="93,162,0,0" VerticalAlignment="Top" Width="175" Panel.ZIndex="1" MouseDoubleClick="datainiPickerAtualizar_MouseDoubleClick" />
+                    <Label x:Name="lblOverDataInicio" HorizontalAlignment="Left" Height="23" Margin="93,162,0,0" VerticalAlignment="Top" Width="175"  Panel.ZIndex="0" MouseDoubleClick="lblOverDataInicio_MouseDoubleClick"/>
+                    
+                    <Label x:Name="lblDataFimAtualizar" Content="Término: " HorizontalAlignment="Left" Margin="283,160,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="datafimPickerAtualizar" HorizontalAlignment="Left" Margin="348,162,0,0" VerticalAlignment="Top" Width="175" Panel.ZIndex="1" MouseDoubleClick="datafimPickerAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverDataFim" HorizontalAlignment="Left" Height="23" Margin="348,162,0,0"  VerticalAlignment="Top" Width="175"  Panel.ZIndex="0" MouseDoubleClick="lblOverDataFim_MouseDoubleClick"/>
+                    
+                    <Separator HorizontalAlignment="Left" Height="18" Margin="0,190,0,0" VerticalAlignment="Top" Width="594" Background="#33000000"/>
+
+                    <Label x:Name="lblDataContratoAtualizar" Content="Data de Término de Contrato: " HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="datacontratoPickerAtualizar" HorizontalAlignment="Left" Margin="186,212,0,0" VerticalAlignment="Top" Width="175" Panel.ZIndex="1" MouseDoubleClick="datacontratoPickerAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverDataContrato" HorizontalAlignment="Left" Height="23" Margin="186,212,0,0" VerticalAlignment="Top" Width="175"  Panel.ZIndex="0" MouseDoubleClick="lblOverDataContrato_MouseDoubleClick"/>
+
+                    <Label x:Name="lblEntradaAtualizar" Content="Horário de Entrada no Polo: " HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="entradaBoxAtualizar" Mask="00:00" HorizontalAlignment="Left" Height="23" Margin="175,242,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="45" MaxLength="5" Panel.ZIndex="1" MouseDoubleClick="entradaBoxAtualizar_MouseDoubleClick" />
+                    <Label x:Name="lblOverEntrada" HorizontalAlignment="Left" Height="23" Margin="175,242,0,0" VerticalAlignment="Top" Width="45"  Panel.ZIndex="0" MouseDoubleClick="lblOverEntrada_MouseDoubleClick"/>
+
+                    <Label x:Name="lblSaidaAtualizar" Content="Horário de Saída do Polo: " HorizontalAlignment="Left" Margin="324,240,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="saidaBoxAtualizar" Mask="00:00" HorizontalAlignment="Left" Height="23" Margin="478,242,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="45" MaxLength="5" Panel.ZIndex="1" MouseDoubleClick="saidaBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverSaida" HorizontalAlignment="Left" Height="23" Margin="478,242,0,0" VerticalAlignment="Top" Width="45"  Panel.ZIndex="0" MouseDoubleClick="lblOverSaida_MouseDoubleClick"/>
+
+                    <Button x:Name="atualizarSendButton"
+                            Content="Enviar" Width="150"
+                            Margin="144,300,0,0" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="atualizarSendButton_Click"/>
+
+                    <Button x:Name="atualizarCancelButton"
+                            Content="Cancelar" Width="150" 
+                            Margin="299,300,0,0" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cancelButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Remover" x:Name="tabRemover" Loaded="tabRemover_Loaded">
+                <Grid Margin="0,0,0,0">
+                    <Label Content="Nome: " HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="nomeBoxRemover" HorizontalAlignment="Left" Margin="93,22,0,0" VerticalAlignment="Top" Width="430"/>
+
+                    <Button x:Name="removerSendButton"
+                            Content="Enviar" Width="150"
+                            Margin="144,300,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="removerSendButton_Click"/>
+
+                    <Button x:Name="cancelButtonDrop"
+                            Content="Cancelar" Width="150" 
+                            Margin="299,300,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cancelButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Visualizar" x:Name="tabVisualizar" Loaded="tabVisualizar_Loaded">
+                <Grid>
+                    <DataGrid x:Name="gridEstagiarios" ItemsSource="{Binding estagiario}" 
+                              HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0" 
+                              Height="315" Width="564" 
+                              AutoGenerateColumns="False" RowHeaderWidth="0"
+                              CanUserResizeColumns="False" CanUserResizeRows="False" 
+                              AlternatingRowBackground="#FFE5E5E5">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding nome}" Width="270" Header="Nome" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding email}"  Width="170" Header="Email" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding polo}"  Width="122" Header="Polo" IsReadOnly="True" />
+                        </DataGrid.Columns>
+
+                        <DataGrid.RowDetailsTemplate>
+                            <DataTemplate>
+                                <Grid Width="560" Height="85">
+                                    <TextBlock Text="Instituição: " Margin="5,5,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding instituicao}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Text="Curso: " Margin="5,25,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding curso}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Text="Início: " Margin="445,25,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding inicio_curso}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Text="Término: " Margin="445,45,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding fim_curso}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Text="Data limite de contrato: " Margin="5,45,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding data_contrato}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Text="Horário de entrada no polo: " Margin="5,65,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding horario_entrada}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Text="Horário de saída no polo: " Margin="270,65,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding horario_saida}"/>
+                                    </TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGrid.RowDetailsTemplate>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Controls:MetroWindow>

@@ -1,0 +1,166 @@
+﻿<Controls:MetroWindow x:Class="SisAVideo.Supervisor.Lecture"
+
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" 
+
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        
+        Title="Cadastro de Conferencista" WindowStyle="SingleBorderWindow"  ResizeMode="NoResize" 
+        Height="290" Width="425" WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False" Topmost="True" ShowIconOnTitleBar="True" Icon="/SisAVideo;component/res/appbar_man_suitcase.png"  >
+
+<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+                <ResourceDictionary Source="/SisAVideo;component/Styles/MaskedTextBox.xaml"/>
+                <ResourceDictionary Source="/SisAVideo;component/Styles/ComboBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+            <TabControl x:Name="tabControl"
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Height="260" Width="419"
+                Margin="0,0,0,0">
+
+            <TabItem Header="Cadastrar" x:Name="tabCadastrar">
+                <Grid>
+                    <Label VerticalAlignment="Top" Width="419" VerticalContentAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="0,35,0,0">
+                        <Label x:Name="lblCpf" Content="CPF: " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </Label>
+
+                    <Label VerticalAlignment="Top" Width="419" VerticalContentAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="0,55,0,0">
+                        <xctk:MaskedTextBox x:Name="cpfBox" Mask="000\.000\.000-00"
+                         TextWrapping="NoWrap" 
+                         HorizontalAlignment="Left" VerticalAlignment="Top" 
+                         Height="23" Width="200"
+                         MaxLength="14"/>
+                    </Label>
+
+                    <Label VerticalAlignment="Top" Width="419" VerticalContentAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="0,75,0,0">
+                        <Label x:Name="lblNome" Content="Nome: " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </Label>
+
+                    <Label VerticalAlignment="Top" Width="419" VerticalContentAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="0,95,0,0">
+                        <TextBox x:Name="nomeBox" 
+                             TextWrapping="NoWrap" 
+                             HorizontalAlignment="Left" VerticalAlignment="Top" 
+                             Height="23" Width="200"
+                             MaxLength="80"/>
+                    </Label>
+
+
+                    <Button x:Name="okButton"
+                            Content="OK" Width="150"
+                            Margin="57,150,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" Click="okButton_Click"/>
+
+                    <Button x:Name="cancelButton"
+                            Content="Cancelar" Width="150" 
+                            Margin="212,150,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cancelButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Atualizar" x:Name="tabAtualizar" Loaded="tabAtualizar_Loaded">
+                <Grid>
+                    <Label VerticalAlignment="Top" Width="419" VerticalContentAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="0,35,0,0">
+                        <Label x:Name="lblCpfAtualizar" Content="CPF: " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </Label>
+
+                    <Label x:Name="lblCpfBoxAtualizar" VerticalAlignment="Top" Width="419" VerticalContentAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="0,55,0,0" Panel.ZIndex="1">
+                        <xctk:MaskedTextBox x:Name="cpfBoxAtualizar" Mask="000\.000\.000-00"
+                         TextWrapping="NoWrap" 
+                         HorizontalAlignment="Left" VerticalAlignment="Top" 
+                         Height="23" Width="200"
+                         MaxLength="14" MouseDoubleClick="cpfBoxAtualizar_MouseDoubleClick"/>
+                    </Label>
+                    
+                    <Label x:Name="lblOverCpf" VerticalAlignment="Top" Width="419" VerticalContentAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="0,55,0,0" Panel.ZIndex="0">
+                        <Label x:Name="lblOverCpf_Content"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="23" Width="200" MouseDoubleClick="lblOverCpf_Content_MouseDoubleClick"/>
+                    </Label>
+
+                    <Label VerticalAlignment="Top" Width="419" VerticalContentAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="0,75,0,0">
+                        <Label x:Name="lblNomeAtualizar" Content="Nome: " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </Label>
+
+                    <TextBox x:Name="nomeBoxAtualizar" 
+                            TextWrapping="NoWrap" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top" 
+                            Height="23" Width="200"
+                            MaxLength="80" MouseDoubleClick="nomeBoxAtualizar_MouseDoubleClick"
+                            Margin="110,100,0,0" Panel.ZIndex="2"/>
+                    
+                    <ComboBox x:Name="nomeComboBoxAtualizar" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Height="23" Width="225" SelectionChanged="nomeComboBoxAtualizar_SelectionChanged"
+                            Margin="110,100,0,0" Panel.ZIndex="1"/>
+                    
+                    <Label x:Name="lblOverNome" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23" Width="200" MouseDoubleClick="lblOverNome_Content_MouseDoubleClick" 
+                            Panel.ZIndex="0" Margin="110,100,0,0"/>
+                    
+                    <Button x:Name="okButtonAtualizar"
+                            Content="OK" Width="150"
+                            Margin="57,150,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" 
+                            Click="okButtonAtualizar_Click"/>
+
+                    <Button Content="Cancelar" Width="150" 
+                            Margin="212,150,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cancelButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Remover" x:Name="tabRemover" Loaded="tabRemover_Loaded">
+                <Grid>
+
+                    <Label VerticalAlignment="Top" Width="419" VerticalContentAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="0,35,0,0">
+                        <Label x:Name="lblCpfRemover" Content="CPF: " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </Label>
+                    
+                    <Label VerticalAlignment="Top" Width="419" VerticalContentAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="0,55,0,0">
+                        <ComboBox x:Name="cpfBoxRemover"
+                         HorizontalAlignment="Left" VerticalAlignment="Top" 
+                         Height="23" Width="200"/>
+                    </Label>
+
+                    <Button x:Name="okButtonRemover"
+                            Content="OK" Width="150"
+                            Margin="57,150,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" Click="okButtonRemover_Click" />
+
+                    <Button Content="Cancelar" Width="150" 
+                            Margin="212,150,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cancelButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Visualizar" x:Name="tabVisualizar" Loaded="tabVisualizar_Loaded">
+                <Grid>
+                    <DataGrid x:Name="gridConferencistas" 
+                              HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0" 
+                              Height="180" Width="389"
+                              AutoGenerateColumns="False" RowHeaderWidth="0"
+                              CanUserResizeColumns="False" CanUserResizeRows="False" 
+                              AlternatingRowBackground="#FFE5E5E5">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Key}" Width="100" Header="CPF" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding Value}"  Width="287" Header="Nome" IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Controls:MetroWindow>

@@ -1,0 +1,212 @@
+﻿<Controls:MetroWindow x:Class="SisAVideo.Supervisor.InsertPolo"
+        
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"        
+             
+        Title="Polo"  WindowStyle="SingleBorderWindow"  ResizeMode="NoResize" 
+        Height="388" Width="600" WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False" Topmost="True" ShowIconOnTitleBar="True" 
+        Icon="/SisAVideo;component/res/appbar.city.png" >
+
+<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+                <ResourceDictionary Source="/SisAVideo;component/Styles/MaskedTextBox.xaml"/>
+                <ResourceDictionary Source="/SisAVideo;component/Styles/ComboBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid>
+        <TabControl x:Name="tabControl"
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Height="360" Width="594"
+                Margin="0,0,0,0">
+
+            <TabItem Header="Cadastrar" x:Name="tabCadastrar">
+                <Grid Margin="0,0,0,0">
+
+                    <Label x:Name="lblNome" Content="Nome: " HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="nomeBox" HorizontalAlignment="Left" Height="23" Margin="93,22,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="420" MaxLength="80"/>
+
+                    <Label x:Name="lblEndereco" Content="Endereço: " HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="enderecoBox" HorizontalAlignment="Left" Height="23" Margin="93,52,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="420" MaxLength="80"/>
+
+                    <Label x:Name="lblCidade" Content="Cidade: " HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="cidadeBox" HorizontalAlignment="Left" Height="23" Margin="93,82,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="187" MaxLength="80"/>
+
+                    <Label x:Name="lblCapacidade" Content="Capacidade: " HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="capacidadeBox" HorizontalAlignment="Left" Height="23" Margin="93,112,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="70" MaxLength="4"/>
+
+                    <Label x:Name="lblAbertura" Content="Horário de Abertura: " HorizontalAlignment="Left" Margin="296,80,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="aberturaBox" Mask="00:00" HorizontalAlignment="Left" Height="23" Margin="443,82,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="70" MaxLength="5"/>
+
+                    <Label x:Name="lblFechamento" Content="Horário de Fechamento: " HorizontalAlignment="Left" Margin="296,110,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="fechamentoBox" Mask="00:00" HorizontalAlignment="Left" Height="23" Margin="443,112,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="70" MaxLength="5"/>
+
+                    <Separator HorizontalAlignment="Left" Height="18" Margin="0,140,0,0" VerticalAlignment="Top" Width="594" Background="#33000000"/>
+
+                    <Label x:Name="lblEmail" Content="E-mail: " HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="emailBox" HorizontalAlignment="Left" Height="23" Margin="93,162,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="213" MaxLength="80"/>
+
+                    <Label x:Name="lblSenha" Content="Senha: " HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="senhaBox" HorizontalAlignment="Left" Height="23" Margin="93,192,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="161" MaxLength="80"/>
+
+                    <Label x:Name="lblCelular" Content="Celular: " HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="celularBox" Mask="(00) 0 0000-0000" HorizontalAlignment="Left" Margin="93,222,0,0" VerticalAlignment="Top" Width="100" MaxLength="16"/>
+
+                    <Button x:Name="cadastrarSendButton"
+							Content="Salvar" Width="150"
+							Margin="144,260,0,0" 
+							HorizontalAlignment="Left" VerticalAlignment="Top"
+							Click="cadastrarSendButton_Click"/>
+
+                    <Button x:Name="cancelButton"
+							Content="Cancelar" Width="150" 
+							Margin="299,260,0,0" 
+							HorizontalAlignment="Left" VerticalAlignment="Top"
+							Click="cancelButton_Click"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Atualizar" x:Name="tabAtualizar" Loaded="tabAtualizar_Loaded">
+                <Grid Margin="0,0,0,0">
+                    <Label x:Name="lblNomeAtualizar" Content="Nome: " HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="nomeBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="93,22,0,0" VerticalAlignment="Top" Width="420" SelectionChanged="nomeBoxAtualizar_SelectionChanged"/>
+
+                    <Label x:Name="lblEnderecoAtualizar" Content="Endereço: " HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="enderecoBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="93,52,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="420" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="enderecoBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverEndereco" HorizontalAlignment="Left" Height="23" Margin="93,52,0,0" VerticalAlignment="Top" Width="420" Panel.ZIndex="0" MouseDoubleClick="lblOverEndereco_MouseDoubleClick"/>
+
+                    <Label x:Name="lblCidadeAtualizar" Content="Cidade: " HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="cidadeBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="93,82,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="187" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="cidadeBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverCidade" HorizontalAlignment="Left" Height="23" Margin="93,82,0,0" VerticalAlignment="Top" Width="187" Panel.ZIndex="0" MouseDoubleClick="lblOverCidade_MouseDoubleClick"/>
+
+                    <Label x:Name="lblCapacidadeAtualizar" Content="Capacidade: " HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="capacidadeBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="93,112,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="70" MaxLength="4" Panel.ZIndex="1" MouseDoubleClick="capacidadeBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverCapacidade" HorizontalAlignment="Left" Height="23" Margin="93,112,0,0" VerticalAlignment="Top" Width="70" Panel.ZIndex="0" MouseDoubleClick="lblOverCapacidade_MouseDoubleClick"/>
+
+                    <Label x:Name="lblAberturaAtualizar" Content="Horário de Abertura: " HorizontalAlignment="Left" Margin="296,80,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="aberturaBoxAtualizar" Mask="00:00" HorizontalAlignment="Left" Height="23" Margin="443,83,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="70" MaxLength="5" Panel.ZIndex="1" MouseDoubleClick="aberturaBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverAbertura" HorizontalAlignment="Left" Height="23" Margin="443,83,0,0" VerticalAlignment="Top" Width="70" Panel.ZIndex="0" MouseDoubleClick="lblOverAbertura_MouseDoubleClick"/>
+
+                    <Label x:Name="lblFechamentoAtualizar" Content="Horário de Fechamento: " HorizontalAlignment="Left" Margin="296,110,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="fechamentoBoxAtualizar" Mask="00:00" HorizontalAlignment="Left" Height="23" Margin="443,112,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="70" MaxLength="5" Panel.ZIndex="1" MouseDoubleClick="fechamentoBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverFechamento" HorizontalAlignment="Left" Height="23" Margin="443,112,0,0" VerticalAlignment="Top" Width="70" Panel.ZIndex="0" MouseDoubleClick="lblOverFechamento_MouseDoubleClick"/>
+
+                    <Separator HorizontalAlignment="Left" Height="18" Margin="0,140,0,0" VerticalAlignment="Top" Width="594" Background="#33000000"/>
+
+                    <Label x:Name="lblEmailAtualizar" Content="E-mail: " HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="emailBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="93,162,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="213" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="emailBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverEmail" HorizontalAlignment="Left" Height="23" Margin="93,162,0,0" VerticalAlignment="Top" Width="213" Panel.ZIndex="0" MouseDoubleClick="lblOverEmail_MouseDoubleClick"/>
+
+                    <Label x:Name="lblSenhaAtualizar" Content="Senha: " HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="senhaBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="93,192,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="161" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="senhaBoxAtualizar_MouseDoubleClick" />
+                    <Label x:Name="lblOverSenha" HorizontalAlignment="Left" Height="23" Margin="93,192,0,0" VerticalAlignment="Top" Width="161" Panel.ZIndex="0" MouseDoubleClick="lblOverSenha_MouseDoubleClick"/>
+
+                    <Label x:Name="lblCelularAtualizar" Content="Celular: " HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="celularBoxAtualizar" Mask="(00) 0 0000-0000" HorizontalAlignment="Left" Margin="93,222,0,0" VerticalAlignment="Top" Width="100" MaxLength="16" Panel.ZIndex="1" MouseDoubleClick="celularBoxAtualizar_MouseDoubleClick" />
+                    <Label x:Name="lblOverCelular" HorizontalAlignment="Left" Height="23" Margin="93,222,0,0" VerticalAlignment="Top" Width="100" Panel.ZIndex="0" MouseDoubleClick="lblOverCelular_MouseDoubleClick"/>
+
+                    <Button x:Name="atualizarSendButton"
+							Content="Salvar" Width="150"
+							Margin="144,260,0,0" 
+							HorizontalAlignment="Left" VerticalAlignment="Top"
+							Click="atualizarSendButton_Click"/>
+
+                    <Button x:Name="atualizarcancelButton"
+							Content="Cancelar" Width="150" 
+							Margin="299,260,0,0" 
+							HorizontalAlignment="Left" VerticalAlignment="Top"
+							Click="cancelButton_Click"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Remover" x:Name="tabRemover" Loaded="tabRemover_Loaded">
+                <Grid Margin="0,0,0,0">
+                    <Label x:Name="lblNomeRemover" Content="Nome: " HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="nomeBoxRemover" HorizontalAlignment="Left" Height="23" Margin="93,23,0,0" VerticalAlignment="Top" Width="420"/>
+
+                    <Button x:Name="removerSendButton"
+                            Content="Enviar" Width="150"
+                            Margin="144,260,0,0" 
+							HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="removerSendButton_Click"/>
+
+                    <Button x:Name="removerCancelButton"
+                            Content="Cancelar" Width="150" 
+                            Margin="299,260,0,0" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cancelButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Visualizar" x:Name="tabVisualizar" Loaded="tabVisualizar_Loaded">
+                <Grid Margin="0,0,0,0">
+                       <DataGrid x:Name="gridPolos" ItemsSource="{Binding polo}" 
+                              HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0" 
+                              Height="275" Width="564" 
+                              AutoGenerateColumns="False" RowHeaderWidth="0"
+                              CanUserResizeColumns="False" CanUserResizeRows="False" 
+                              AlternatingRowBackground="#FFE5E5E5">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding nome}" Width="270" Header="Nome" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding cidade}"  Width="172" Header="Cidade" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding celular}"  Width="120" Header="Celular" IsReadOnly="True" />
+                        </DataGrid.Columns>
+
+                        <DataGrid.RowDetailsTemplate>
+                            <DataTemplate>
+                                <Grid Width="560" Height="105">
+                                    <TextBlock Text="Endereço: " Margin="5,5,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding endereco}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Text="Capacidade: " Margin="476,5,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding capacidade}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Text="Email: " Margin="5,25,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding email}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Text="Horário de abertura: " Margin="418,25,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding horario_abertura}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Text="Horário de fechamento: " Margin="400,45,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding horario_fechamento}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Text="Senha: " Margin="5,45,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding senha}"/>
+                                    </TextBlock>
+                                    
+                                    <TextBlock Text="Estagiário da manhã: "  Margin="5,65,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding estagiario_manha}"/>
+                                    </TextBlock>
+                                    
+                                    <TextBlock Text="Estagiário da tarde: "  Margin="5,85,0,0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding estagiario_tarde}"/>
+                                    </TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGrid.RowDetailsTemplate>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Controls:MetroWindow>

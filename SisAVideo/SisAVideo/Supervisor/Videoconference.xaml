@@ -1,0 +1,225 @@
+﻿<Controls:MetroWindow x:Class="SisAVideo.Supervisor.Videoconference"
+        
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+
+        Title="Videoconferência"  WindowStyle="SingleBorderWindow"  ResizeMode="NoResize" 
+        Height="480" Width="600" WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False" Topmost="True"
+        ShowIconOnTitleBar="True" Icon="/SisAVideo;component/res/appbar.movie.clapper.solid.png">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+                <ResourceDictionary Source="/SisAVideo;component/Styles/MaskedTextBox.xaml"/>
+                <ResourceDictionary Source="/SisAVideo;component/Styles/ComboBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <TabControl x:Name="tabControl"
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Height="450" Width="594"
+                Margin="0,0,0,0">
+
+            <TabItem Header="Cadastrar" x:Name="tabCadastrar" Loaded="tabCadastrar_Loaded">
+                <Grid>
+
+                    <Label x:Name="lblTitulo" Content="Título: " HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tituloBox" HorizontalAlignment="Left" Height="23" Margin="86,20,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="430" MaxLength="120"/>
+
+                    <Label x:Name="lblCodigo" Content="Código da Videoconferência: " HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="codigoBox" HorizontalAlignment="Left" Height="23" Margin="181,52,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="50" MaxLength="5" IsEnabled="False"/>
+
+                    <Label x:Name="lblData" Content="Data: " HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="dataPicker" HorizontalAlignment="Left" Margin="86,82,0,0" VerticalAlignment="Top" Width="175"/>
+
+                    <Label x:Name="lblHoraInicio" Content="Hora Início: " HorizontalAlignment="Left" Margin="296,50,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="horaInicioBox" Mask="00:00" HorizontalAlignment="Left" Height="23" Margin="374,52,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="50" MaxLength="5"/>
+
+                    <Label x:Name="lblHoraFim" Content="Hora Fim: " HorizontalAlignment="Left" Margin="296,80,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="horaFimBox" Mask="00:00" HorizontalAlignment="Left" Height="23" Margin="374,82,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="50" MaxLength="5"/>
+
+                    <Separator HorizontalAlignment="Left" Height="18" Margin="0,110,0,0" VerticalAlignment="Top" Width="594" Background="#33000000"/>
+
+                    <Label x:Name="lblSolicitante" Content="Solicitante: " HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="solicitanteBox" HorizontalAlignment="Left" Height="23" Margin="86,132,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="430" MaxLength="80"/>
+
+                    <Label x:Name="lblSecretaria" Content="Secretaria: " HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="secretariaBox" HorizontalAlignment="Left" Height="23" Margin="86,162,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="430" MaxLength="80"/>
+
+                    <Label x:Name="lblOrgao" Content="Orgão: " HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="OrgaoBox" HorizontalAlignment="Left" Height="23" Margin="86,192,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="430" MaxLength="80"/>
+
+                    <Label x:Name="lblStreaming" Content="Streaming: " HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="streamingBox" HorizontalAlignment="Left" Height="23" Margin="86,222,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="180" MaxLength="80"/>
+                    
+                    <Label x:Name="lblEstudio" Content="Estúdio: " HorizontalAlignment="Left" Margin="276,220,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="estudioBox" HorizontalAlignment="Left" Height="23" Margin="336,222,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="180" MaxLength="80"/>
+                    
+<Separator HorizontalAlignment="Left" Height="18" Margin="0,250,0,0" VerticalAlignment="Top" Width="594"  Background="#33000000"/>
+
+                    <TextBlock HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top">
+                        <Hyperlink Click="publicoalvo_Click">Público Alvo</Hyperlink>
+                    </TextBlock>
+
+                    <TextBlock HorizontalAlignment="Left" Margin="257,280,0,0" VerticalAlignment="Top">
+                        <Hyperlink Click="conferencista_Click">Conferencistas</Hyperlink>
+                    </TextBlock>
+
+                    <TextBlock HorizontalAlignment="Left" Margin="510,280,0,0" VerticalAlignment="Top">
+                        <Hyperlink Click="poloativo_Click">Polos Ativos</Hyperlink>
+                    </TextBlock>
+
+                    <Button x:Name="cadastrarSendButton"
+                            Content="Enviar" Width="150"
+                            Margin="144,350,0,0" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cadastrarSendButton_Click"/>
+
+                    <Button x:Name="cancelButton"
+                            Content="Cancelar" Width="150" 
+                            Margin="299,350,0,0" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cancelButton_Click"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Atualizar" x:Name="tabAtualizar" Loaded="tabAtualizar_Loaded">
+                <Grid>
+                    <Label x:Name="lblTituloAtualizar" Content="Título: " HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tituloBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="86,20,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="430" MaxLength="120" Panel.ZIndex="1" MouseDoubleClick="tituloBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverTitulo" HorizontalAlignment="Left" Margin="86,20,0,0" VerticalAlignment="Top" Width="430" Height="23" Panel.ZIndex="0" MouseDoubleClick="lblOverTitulo_MouseDoubleClick"/>
+                    
+                    <Label x:Name="lblCodigoAtualizar" Content="Código da Videoconferência: " HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="codigoBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="181,52,0,0" VerticalAlignment="Top" Width="50" SelectionChanged="codigoBoxAtualizar_SelectionChanged" />
+
+                    <Label x:Name="lblDataAtualizar" Content="Data: " HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="dataPickerAtualizar" HorizontalAlignment="Left" Margin="86,82,0,0" VerticalAlignment="Top" Width="175" Panel.ZIndex="1" MouseDoubleClick="dataPickerAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverData" HorizontalAlignment="Left" Margin="86,82,0,0" VerticalAlignment="Top" Width="175" Height="24" Panel.ZIndex="0" MouseDoubleClick="lblOverData_MouseDoubleClick"/>
+                    
+                    <Label x:Name="lblHoraInicioAtualizar" Content="Hora Início: " HorizontalAlignment="Left" Margin="296,50,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="horaInicioBoxAtualizar" Mask="00:00" HorizontalAlignment="Left" Height="23" Margin="374,52,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="50" MaxLength="5" Panel.ZIndex="1" MouseDoubleClick="horaInicioBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverHoraInicio" HorizontalAlignment="Left" Height="23" Margin="374,52,0,0" VerticalAlignment="Top" Width="50" Panel.ZIndex="0" MouseDoubleClick="lblOverHoraInicio_MouseDoubleClick"/>
+
+                    <Label x:Name="lblHoraFimAtualizar" Content="Hora Fim: " HorizontalAlignment="Left" Margin="296,80,0,0" VerticalAlignment="Top"/>
+                    <xctk:MaskedTextBox x:Name="horaFimBoxAtualizar" Mask="00:00" HorizontalAlignment="Left" Height="23" Margin="374,82,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="50" MaxLength="5" Panel.ZIndex="1" MouseDoubleClick="horaFimBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverHoraFim" HorizontalAlignment="Left" Height="23" Margin="374,82,0,0" VerticalAlignment="Top" Width="50" Panel.ZIndex="0" MouseDoubleClick="lblOverHoraFim_MouseDoubleClick"/>
+
+                    <Separator HorizontalAlignment="Left" Height="18" Margin="0,110,0,0" VerticalAlignment="Top" Width="594" Background="#33000000"/>
+
+                    <Label x:Name="lblSolicitanteAtualizar" Content="Solicitante: " HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="solicitanteBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="86,132,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="430" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="solicitanteBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lbOverSolicitante" HorizontalAlignment="Left" Height="23" Margin="86,132,0,0" VerticalAlignment="Top" Width="430" Panel.ZIndex="0" MouseDoubleClick="lbOverSolicitante_MouseDoubleClick"/>
+
+                    <Label x:Name="lblSecretariaAtualizar" Content="Secretaria: " HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="secretariaBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="86,162,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="430" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="secretariaBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverSecretaria" HorizontalAlignment="Left" Height="23" Margin="86,162,0,0" VerticalAlignment="Top" Width="430" Panel.ZIndex="0" MouseDoubleClick="lblOverSecretaria_MouseDoubleClick"/>
+
+                    <Label x:Name="lblOrgaoAtualizar" Content="Orgão: " HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="orgaoBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="86,192,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="430" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="orgaoBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lvlOverOrgao" HorizontalAlignment="Left" Height="23" Margin="86,192,0,0" VerticalAlignment="Top" Width="430" Panel.ZIndex="0" MouseDoubleClick="lvlOverOrgao_MouseDoubleClick"/>
+
+                    <Label x:Name="lblStreamingAtualizar" Content="Streaming: " HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="streamingBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="86,222,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="180" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="streamingBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverStreaming" HorizontalAlignment="Left" Height="23" Margin="86,222,0,0" VerticalAlignment="Top" Width="180" Panel.ZIndex="0" MouseDoubleClick="lblOverStreaming_MouseDoubleClick"/>
+
+                    <Label x:Name="lblEstudioAtualizar" Content="Estúdio: " HorizontalAlignment="Left" Margin="276,220,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="estudioBoxAtualizar" HorizontalAlignment="Left" Height="23" Margin="336,222,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="180" MaxLength="80" Panel.ZIndex="1" MouseDoubleClick="estudioBoxAtualizar_MouseDoubleClick"/>
+                    <Label x:Name="lblOverEstudio" HorizontalAlignment="Left" Height="23" Margin="336,222,0,0" VerticalAlignment="Top" Width="180" Panel.ZIndex="0" MouseDoubleClick="lblOverEstudio_MouseDoubleClick"/>
+
+                    <Separator HorizontalAlignment="Left" Height="18" Margin="0,250,0,0" VerticalAlignment="Top" Width="594"  Background="#33000000"/>
+
+                    <TextBlock HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top">
+                        <Hyperlink Click="publicoalvoAtualizar_Click">Público Alvo</Hyperlink>
+                    </TextBlock>
+
+                    <TextBlock HorizontalAlignment="Left" Margin="257,280,0,0" VerticalAlignment="Top">
+                        <Hyperlink Click="conferencistaAtualizar_Click">Conferencistas</Hyperlink>
+                    </TextBlock>
+
+                    <TextBlock HorizontalAlignment="Left" Margin="510,280,0,0" VerticalAlignment="Top">
+                        <Hyperlink Click="poloativoAtualizar_Click">Polos Ativos</Hyperlink>
+                    </TextBlock>
+
+                    <Button x:Name="atualizarSendButton"
+                            Content="Enviar" Width="150"
+                            Margin="144,350,0,0" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="atualizarSendButton_Click"/>
+
+                    <Button x:Name="atualizarCancelButton"
+                            Content="Cancelar" Width="150" 
+                            Margin="299,350,0,0" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cancelButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Remover" x:Name="tabRemover" Loaded="tabRemover_Loaded">
+                <Grid Margin="0,0,0,0">
+                    <Label Content="Título: " HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" />
+                    <TextBox x:Name="tituloBoxRemover" HorizontalAlignment="Left" Height="23" Margin="93,22,0,0" VerticalAlignment="Top" Width="430" IsEnabled="False"/>
+                    
+                    <Label Content="Código: " HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" />
+                    <ComboBox x:Name="codigoComboBox" HorizontalAlignment="Left" Height="23" Margin="93,52,0,0" VerticalAlignment="Top" Width="50" SelectionChanged="codigoComboBox_SelectionChanged"/>
+
+                    <Button x:Name="removerSendButton"
+                            Content="Enviar" Width="150"
+                            Margin="144,300,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="removerSendButton_Click"/>
+
+                    <Button x:Name="cancelButtonDrop"
+                            Content="Cancelar" Width="150" 
+                            Margin="299,300,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cancelButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Visualizar" x:Name="tabVisualizar" Loaded="tabVisualizar_Loaded">
+                <Grid>
+                    <WebBrowser x:Name="browser" Height="395" Width="586" Panel.ZIndex="0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Ativação" x:Name="tabAtivacao" Loaded="tabAtivacao_Loaded">
+                <Grid Margin="0,0,0,0">
+                    <Label Content="Título: " HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" />
+                    <TextBox x:Name="tituloBoxAtivacao" HorizontalAlignment="Left" Height="23" Margin="93,22,0,0" VerticalAlignment="Top" Width="430" IsEnabled="False"/>
+
+                    <Label Content="Código: " HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" />
+                    <ComboBox x:Name="codigoComboBoxAtivacao" HorizontalAlignment="Left" Height="23" Margin="93,52,0,0" VerticalAlignment="Top" Width="50" SelectionChanged="codigoComboBoxAtivacao_SelectionChanged"/>
+                    
+                    <Label Margin="10,100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                        <ListBox x:Name="polosAtivacao" HorizontalAlignment="Left" Height="184" VerticalAlignment="Top" Width="190" BorderBrush="#66119EDA"/>
+                    </Label>
+                    
+                    <Button x:Name="ativacaoSendButton"
+                            Content="Enviar" Width="150"
+                            Margin="144,300,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="ativacaoSendButton_Click"/>
+
+                    <Button Content="Cancelar" Width="150" 
+                            Margin="299,300,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Click="cancelButton_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Controls:MetroWindow>

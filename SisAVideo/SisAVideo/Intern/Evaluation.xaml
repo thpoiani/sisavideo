@@ -1,0 +1,180 @@
+﻿<Controls:MetroWindow x:Class="SisAVideo.Intern.Evaluation"
+        x:Name="Avalicao"
+
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+
+        Title="Avaliação de Videoconferência" WindowStyle="SingleBorderWindow"  ResizeMode="NoResize" 
+        Height="600" Width="600" WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False" Topmost="True" Loaded="Avaliacao_Loaded"
+        ShowIconOnTitleBar="True" Icon="/SisAVideo;component/res/appbar.page.excel.png" >
+
+<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+                <ResourceDictionary Source="/SisAVideo;component/Styles/ComboBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+
+    <Grid>
+        
+        <Label x:Name="lblTitulo" Content="Título: " HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="tituloBox" HorizontalAlignment="Left" Height="23" Margin="61,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="523" IsEnabled="False"/>
+        
+        <Label x:Name="lblCodigo" Content="Código da Videoconferência: " HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="codigoBox" HorizontalAlignment="Left" Margin="181,52,0,0" VerticalAlignment="Top" Width="50" SelectionChanged="codigoBox_SelectionChanged"/>
+
+        <Label x:Name="lblData" Content="Data: " HorizontalAlignment="Left" Margin="354,50,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dataBox" HorizontalAlignment="Left" Margin="400,52,0,0" VerticalAlignment="Top" Width="184"/>
+        
+        <Label x:Name="lblTotalParticipantes" Content="Total de Participantes: " HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="totalParticipantesBox" HorizontalAlignment="Left" Height="23" Margin="145,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+
+        <Label x:Name="lblTotalRespostas" Content="Total de Respostas: " HorizontalAlignment="Left" Margin="200,80,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="totalRespostasBox" HorizontalAlignment="Left" Height="23" Margin="320,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+
+        <Label x:Name="lblParticipantes" Content="Participantes: " HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="participantesBox" HorizontalAlignment="Left" Margin="99,112,0,0" VerticalAlignment="Top" Width="261"/>
+        
+        <Label x:Name="lblPeriodo" Content="Período: " HorizontalAlignment="Left" Margin="400,80,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="manhaRadio" Content="Manhã" HorizontalAlignment="Left" Margin="460,85,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="tardeRadio" Content="Tarde" HorizontalAlignment="Left" Margin="460,105,0,0" VerticalAlignment="Top"/>
+               
+        <Separator HorizontalAlignment="Left" Height="12" Margin="0,150,0,0" VerticalAlignment="Top" Width="594" Background="#33000000"/>
+
+        <Label Content="               0%     25%   50%    75%   100%  Sem Resposta" 
+               HorizontalContentAlignment="Left"  VerticalContentAlignment="Center"
+               HorizontalAlignment="Left" Margin="10,173,0,0" VerticalAlignment="Top" Width="574"/>
+        <Label x:Name="lbl11" Content="1.1" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl12" Content="1.2" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl13" Content="1.3" HorizontalAlignment="Left" Margin="10,251,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl14"  Content="1.4" HorizontalAlignment="Left" Margin="10,277,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl21"  Content="2.1" HorizontalAlignment="Left" Margin="10,303,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl22"  Content="2.2" HorizontalAlignment="Left" Margin="10,329,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl23" Content="2.3" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl311" Content="3.1.1" HorizontalAlignment="Left" Margin="10,381,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl312" Content="3.1.2" HorizontalAlignment="Left" Margin="10,407,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl321" Content="3.2.1" HorizontalAlignment="Left" Margin="10,433,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl322" Content="3.2.2" HorizontalAlignment="Left" Margin="10,459,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl331" Content="3.3.1" HorizontalAlignment="Left" Margin="10,485,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="b1100" HorizontalAlignment="Left" Height="23" Margin="55,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1125" HorizontalAlignment="Left" Height="23" Margin="90,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1150" HorizontalAlignment="Left" Height="23" Margin="125,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1175" HorizontalAlignment="Left" Height="23" Margin="160,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1110" HorizontalAlignment="Left" Height="23" Margin="195,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b11na" HorizontalAlignment="Left" Height="23" Margin="230,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+
+        <TextBox x:Name="b1200" HorizontalAlignment="Left" Height="23" Margin="55,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1225" HorizontalAlignment="Left" Height="23" Margin="90,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1250" HorizontalAlignment="Left" Height="23" Margin="125,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1275" HorizontalAlignment="Left" Height="23" Margin="160,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1210" HorizontalAlignment="Left" Height="23" Margin="195,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b12na" HorizontalAlignment="Left" Height="23" Margin="230,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+
+        <TextBox x:Name="b1300" HorizontalAlignment="Left" Height="23" Margin="55,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1325" HorizontalAlignment="Left" Height="23" Margin="90,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1350" HorizontalAlignment="Left" Height="23" Margin="125,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1375" HorizontalAlignment="Left" Height="23" Margin="160,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1310" HorizontalAlignment="Left" Height="23" Margin="195,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b13na" HorizontalAlignment="Left" Height="23" Margin="230,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+
+        <TextBox x:Name="b1400" HorizontalAlignment="Left" Height="23" Margin="55,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1425" HorizontalAlignment="Left" Height="23" Margin="90,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1450" HorizontalAlignment="Left" Height="23" Margin="125,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1475" HorizontalAlignment="Left" Height="23" Margin="160,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b1410" HorizontalAlignment="Left" Height="23" Margin="195,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b14na" HorizontalAlignment="Left" Height="23" Margin="230,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+
+        <TextBox x:Name="b2100" HorizontalAlignment="Left" Height="23" Margin="55,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b2125" HorizontalAlignment="Left" Height="23" Margin="90,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b2150" HorizontalAlignment="Left" Height="23" Margin="125,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b2175" HorizontalAlignment="Left" Height="23" Margin="160,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b2110" HorizontalAlignment="Left" Height="23" Margin="195,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b21na" HorizontalAlignment="Left" Height="23" Margin="230,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+
+        <TextBox x:Name="b2200" HorizontalAlignment="Left" Height="23" Margin="55,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b2225" HorizontalAlignment="Left" Height="23" Margin="90,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b2250" HorizontalAlignment="Left" Height="23" Margin="125,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b2275" HorizontalAlignment="Left" Height="23" Margin="160,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b2210" HorizontalAlignment="Left" Height="23" Margin="195,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b22na" HorizontalAlignment="Left" Height="23" Margin="230,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+
+        <TextBox x:Name="b2300" HorizontalAlignment="Left" Height="23" Margin="55,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b2325" HorizontalAlignment="Left" Height="23" Margin="90,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b2350" HorizontalAlignment="Left" Height="23" Margin="125,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b2375" HorizontalAlignment="Left" Height="23" Margin="160,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b2310" HorizontalAlignment="Left" Height="23" Margin="195,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b23na" HorizontalAlignment="Left" Height="23" Margin="230,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+
+        <TextBox x:Name="b31100" HorizontalAlignment="Left" Height="23" Margin="55,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b31125" HorizontalAlignment="Left" Height="23" Margin="90,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b31150" HorizontalAlignment="Left" Height="23" Margin="125,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b31175" HorizontalAlignment="Left" Height="23" Margin="160,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b31110" HorizontalAlignment="Left" Height="23" Margin="195,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b311na" HorizontalAlignment="Left" Height="23" Margin="230,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+
+        <TextBox x:Name="b31200" HorizontalAlignment="Left" Height="23" Margin="55,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b31225" HorizontalAlignment="Left" Height="23" Margin="90,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b31250" HorizontalAlignment="Left" Height="23" Margin="125,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b31275" HorizontalAlignment="Left" Height="23" Margin="160,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b31210" HorizontalAlignment="Left" Height="23" Margin="195,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b312na" HorizontalAlignment="Left" Height="23" Margin="230,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+
+        <TextBox x:Name="b32100" HorizontalAlignment="Left" Height="23" Margin="55,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b32125" HorizontalAlignment="Left" Height="23" Margin="90,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b32150" HorizontalAlignment="Left" Height="23" Margin="125,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b32175" HorizontalAlignment="Left" Height="23" Margin="160,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b32110" HorizontalAlignment="Left" Height="23" Margin="195,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b321na" HorizontalAlignment="Left" Height="23" Margin="230,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+
+        <TextBox x:Name="b32200" HorizontalAlignment="Left" Height="23" Margin="55,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b32225" HorizontalAlignment="Left" Height="23" Margin="90,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b32250" HorizontalAlignment="Left" Height="23" Margin="125,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b32275" HorizontalAlignment="Left" Height="23" Margin="160,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b32210" HorizontalAlignment="Left" Height="23" Margin="195,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b322na" HorizontalAlignment="Left" Height="23" Margin="230,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+
+        <TextBox x:Name="b33100" HorizontalAlignment="Left" Height="23" Margin="55,485,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b33125" HorizontalAlignment="Left" Height="23" Margin="90,485,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b33150" HorizontalAlignment="Left" Height="23" Margin="125,485,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b33175" HorizontalAlignment="Left" Height="23" Margin="160,485,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b33110" HorizontalAlignment="Left" Height="23" Margin="195,485,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="b331na" HorizontalAlignment="Left" Height="23" Margin="230,485,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+
+        <Label x:Name="lblObs" Content="Observações: " 
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+               HorizontalAlignment="Left" Margin="265,199,0,0" VerticalAlignment="Top" Width="319"/>
+        
+        <RichTextBox x:Name="obsBox" HorizontalAlignment="Left" Height="286" Margin="265,225,0,0" VerticalAlignment="Top" Width="319">
+            <FlowDocument>
+                <Paragraph>
+                    <Run/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+        <Button x:Name="sendButton"
+                Content="Enviar" Width="150"
+                Margin="144,520,0,0" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Click="sendButton_Click"/>
+
+        <Button x:Name="cancelButton"
+                Content="Cancelar" Width="150" 
+                Margin="299,520,0,0" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Click="cancelButton_Click"/>
+    </Grid>
+</Controls:MetroWindow>
